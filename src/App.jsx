@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import search from "./search.svg"
-import MovieCard from './MovieCard'
+import MovieCard from './MovieCard.jsx';
 
 
 const API_URL = 'http://www.omdbapi.com/?apikey=5235b120';
@@ -14,7 +14,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const searchMovie = async (title) => {
-    const response = await fetch(`${API_URL} &s=${title}`);
+    const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
     setMovies(data.Search);
   }
